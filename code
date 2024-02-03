@@ -1,0 +1,62 @@
+decision=""
+while (decision !="N" and decision !="n"):
+	      
+	ProgName=str(input("Enter Programmer's Name: "))
+	StudName=str(input("Enter Student Name: "))
+	CourseCode=str(input("Enter Student Course Code: "))
+	YearCode=int(input("Enter Student Year Code: "))
+	tot_lec_units=int(input("Enter Total Lecture Units: "))
+	tot_lab_units=int(input("Enter Total Laboratory Units: "))
+	tot_units=(tot_lec_units+tot_lab_units)
+	lec_rate=float(0)
+	lab_rate=float(0)
+	tui_fee=float(0)
+	balance=float(0)
+		
+	if CourseCode == 'A':
+		course = ("ENGINEERING")
+	elif CourseCode == 'B':
+		course = ("BUSINESS ADMINISTRATION")
+	elif CourseCode == 'C':
+		course = ("SECRETARIAL")
+	elif CourseCode == 'D':
+		course = ("ARCHITECTURE")
+	
+	if YearCode == 1:
+		lec_rate =float(345.75)
+		lab_rate =float(420.45)
+	elif YearCode == 2:
+		lec_rate =float(320.45)
+		lab_rate =float(400.50)
+	elif YearCode == 3:
+		lec_rate =float(298.75)
+		lab_rate =float(389.75)
+	elif YearCode == 4 or YearCode == 5:
+		lec_rate =float(275.85)
+		lab_rate =float(360.65)
+	
+	if tot_units >= 1 or tot_units == 8:
+		downpayment = 800
+	elif tot_units >= 9 or tot_units == 14:
+		downpayment = 1000
+	elif tot_units >= 15 or tot_units == 18:
+		downpayment = 1500
+	elif tot_units >= 19:
+		downpayment = 1800
+	
+	lec_fee =float(tot_lec_units * lec_rate)
+	lab_fee =float(tot_lab_units * lab_rate)
+	tui_fee =float(lec_fee + lab_fee)
+	balance=float(tui_fee - downpayment)
+	
+	print(" ")
+	print("The Programmer's Name is : ",ProgName)
+	print(" ")
+	print(f"Student name: {StudName}")
+	print(f"Course Name: {course}")
+	print(f"Tuition Fee: {tui_fee}")
+	print(f"Balance: {balance}")
+	print(" ")
+	decision=input("Do you still want to continue? [Y/N): ")
+	print(" ")
+print(f"Exited")
